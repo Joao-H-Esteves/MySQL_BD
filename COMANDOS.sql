@@ -40,16 +40,29 @@ select nome , min(totaulas) from cursos;
 select sum(totaulas) from cursos
 where ano ='2016';
 
+
+/* EXERCICIOS */
+
+/* lOCALIZAR TODAS AS MULHERES DA LISTA*/
 select * from gafanhotos 
 where sexo like 'f';
 
+/* TODOS AS PESSOAS NASCIDAS ENTRE AS DATAS: */
 select * from gafanhotos 
 where nascimento >= '2000-01-01' and nascimento <= '2015-12-31';
 
+/*Contar quantas pessoas são nascidas nessa data*/
 select count(*) from gafanhotos 
 where nascimento >= '2000-01-01' and nascimento <= '2015-12-31';
 
+/* TODOS OS  PROGRAMADORES HOMENS DA LISTA  */
 select * from gafanhotos
 where profissao like 'progra%' and sexo = 'm';
 
+/* QUANTAS PESSOAS QUE A 1ª LETRA SEJA 'J' E SEJA BRASILEIRA */
+select * from gafanhotos
+where nome like 'j%' and nacionalidade = 'brasil';
 
+/*NOME E NASCIONALIDADE DE TODOS OS HOMENS COM 'SILVA' NO NOME E PESEM MENOS DE 100 KG*/
+select nome , nacionalidade from gafanhotos
+where nome like '%_silva%' and peso < 100;	
